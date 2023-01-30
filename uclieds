@@ -1,0 +1,36 @@
+package recursive;
+
+import java.util.Scanner;
+
+
+public class GCD {
+	public static int EuclidAlgorithm(int numerator, int denominator) {
+		if ((numerator == 0) || (denominator == 0)){
+			return 0;
+		}
+		int remainder;
+		remainder = (int) (numerator % denominator);
+		if (remainder != 0) {
+			return EuclidAlgorithm(denominator, remainder); 
+		} else {
+			return denominator;
+			
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter numerator: ");
+		int numerator = sc.nextInt();
+		
+		System.out.print("Enter denominator: ");
+		int denominator = sc.nextInt();
+		
+		sc.close();
+		
+		System.out.println("GCD: " + EuclidAlgorithm (numerator, denominator));
+
+	}
+
+}
